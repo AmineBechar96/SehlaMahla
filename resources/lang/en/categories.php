@@ -1,0 +1,35 @@
+<?php
+return [
+  
+  'loans'=>'Location',
+  'free jobs'=>'Traveaux Libres' ,
+  'auto-care'=>'Entretien Automobile',
+  'baby care'=>'Baby-sitting',
+  'banquets'=>'Grand Plaisir',
+  'book hotels'=>'Hotels',
+  'dormitory'=>'Dortoire',
+  'daily needs'=>'Besoins Quotidiens',
+  'doctors'=>'Medecins',
+  'education'=>'Education',
+  'dentist'=>'Dentist',
+  'digital services'=>'Services Dégital',
+  'personnel care'=>'Beauty Centre',
+  'on demand services'=>'Services à la Demande',
+  'real estate'=>'Immobilier',
+  'restaurants'=>'Restaurants',
+  'security service'=>'Service de Sécurité',
+  'transporters'=>'Transporteurs',
+  'travel'=>'Voyage',
+  'wedding'=>'Marriage & Fètes',
+  'printing and publishing'=>'Impression et édition',
+  'Lawyers and legal advice'=>'Conseils Juridiques',
+  'detergent'=>'Detergent',
+  'companies'=>'Entreprises',
+  'repairs'=>'Réparation',
+  'engineering'=>'Ingénierie',
+  'shipping'=>'Livraison',
+  'sell stores'=>'Vendeur',
+  'gastronomy'=>'Gastronomie',
+];
+
+

@@ -30,13 +30,18 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            
             \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\LastUserActivity::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\LastUserActivity::class,
         ],
 
         'api' => [
@@ -55,6 +60,11 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'auth.isClient' => \App\Http\Middleware\isClientMiddleware::class,
+        'auth.isProvider' => \App\Http\Middleware\isServiceProviderMiddleware::class,
+        'auth.isGoing' => \App\Http\Middleware\ActiveMemberShip::class,
+        'auth.isActive' => \App\Http\Middleware\isActiveClient::class,
+
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,

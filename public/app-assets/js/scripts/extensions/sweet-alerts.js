@@ -19,7 +19,7 @@ $(document).ready(function () {
   });
 
   $('#with-title').on('click', function () {
-    Swal.fire({
+    Swal.fire({ 
       title: 'The Internet?,',
       text: "That thing is still around?",
       confirmButtonClass: 'btn btn-primary',

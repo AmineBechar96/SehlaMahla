@@ -32,11 +32,11 @@
                             <div class="card-header d-flex flex-column align-items-start pb-0">
                                 <div class="avatar bg-rgba-primary p-50 m-0">
                                     <div class="avatar-content">
-                                        <i class="feather icon-users text-primary font-medium-5"></i>
+                                        <i class="feather icon-arrow-down text-primary font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1">92.6k</h2>
-                                <p class="mb-0">Subscribers Gained</p>
+                                <h2 class="text-bold-700 mt-1">{{round($prix)-10}}</h2>
+                                <p class="mb-0">Prix Minimum</p>
                             </div>
                             <div class="card-content">
 
@@ -48,11 +48,11 @@
                             <div class="card-header d-flex flex-column align-items-start pb-0">
                                 <div class="avatar bg-rgba-success p-50 m-0">
                                     <div class="avatar-content">
-                                        <i class="feather icon-credit-card text-success font-medium-5"></i>
+                                        <i class="feather icon-dollar-sign text-success font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1">97.5k</h2>
-                                <p class="mb-0">Revenue Generated</p>
+                                <h2 class="text-bold-700 mt-1">{{round($prix)}}</h2>
+                                <p class="mb-0">Bonne Affaire</p>
                             </div>
                             <div class="card-content">
 
@@ -64,11 +64,11 @@
                             <div class="card-header d-flex flex-column align-items-start pb-0">
                                 <div class="avatar bg-rgba-danger p-50 m-0">
                                     <div class="avatar-content">
-                                        <i class="feather icon-shopping-cart text-danger font-medium-5"></i>
+                                        <i class="feather icon-arrow-up text-danger font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1">36%</h2>
-                                <p class="mb-0">Quarterly Sales</p>
+                                <h2 class="text-bold-700 mt-1">{{round($prix)+20}}</h2>
+                                <p class="mb-0">Prix Maximum</p>
                             </div>
                             <div class="card-content">
 
@@ -80,11 +80,11 @@
                             <div class="card-header d-flex flex-column align-items-start pb-0">
                                 <div class="avatar bg-rgba-warning p-50 m-0">
                                     <div class="avatar-content">
-                                        <i class="feather icon-package text-warning font-medium-5"></i>
+                                        <i class="feather icon-target text-warning font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1">97.5K</h2>
-                                <p class="mb-0">Orders Received</p>
+                                <h2 class="text-bold-700 mt-1">84 %</h2>
+                                <p class="mb-0">Précision</p>
                             </div>
                             <div class="card-content">
 
@@ -112,18 +112,27 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body pt-0">
-                                    <div id="session-chart" class="mb-1"></div>
+                                    <div id="session-chart" class="mb-1"> </div>
+                                    @foreach ($models as $model)
                                     <div class="chart-info d-flex justify-content-between mb-1">
                                         <div class="series-info d-flex align-items-center">
-                                            <i class="feather icon-monitor font-medium-2 text-primary"></i>
-                                            <span class="text-bold-600 mx-50">Desktop</span>
-                                            <span> - 58.6%</span>
+                                            <i class="feather icon-truck font-medium-2 text-primary"></i>
+                                            <span class="text-bold-600 mx-50">{{$model->model}}</span>
+
+                                            <span>
+                                                @php
+                                                echo "- ".number_format((float)$model->total * 100 / $counttotal, 1,
+                                                '.', '')."%";
+                                                @endphp
+                                            </span>
                                         </div>
                                         <div class="series-result">
                                             <span>2%</span>
                                             <i class="feather icon-arrow-up text-success"></i>
                                         </div>
                                     </div>
+                                    @endforeach
+
                                     <div class="chart-info d-flex justify-content-between mb-1">
                                         <div class="series-info d-flex align-items-center">
                                             <i class="feather icon-tablet font-medium-2 text-warning"></i>
@@ -160,40 +169,44 @@
                             <div class="card-content">
                                 <div class="card-body">
                                     <ul class="activity-timeline timeline-left list-unstyled">
+
+                                        @php
+                                        $counteur=0;
+                                        @endphp
+                                        @foreach ($brandss as $brand)
+                                        @php
+                                        $counteur=$counteur+1;
+                                        @endphp
                                         <li>
                                             <div class="timeline-icon bg-primary">
                                                 <i class="feather icon-plus font-medium-2 align-middle"></i>
                                             </div>
                                             <div class="timeline-info">
-
-                                                @foreach ($result as $document)
-                                                @php
-                                                $json= json_encode( $document->getArrayCopy() );
-                                                //print($json);
-                                                $properties = json_decode($json, true);
-                                                $data = array_filter($properties);
-                                                //return $data['_id'];
-                                                echo reset($data);
-                                                /* foreach ($properties as $doc) {
-                                                echo '<div class="timeline-icon bg-primary">
+                                                <div class="timeline-icon bg-primary">
                                                     <i class="feather icon-plus font-medium-2 align-middle"></i>
                                                 </div>
                                                 <div class="timeline-info">
-                                                    <p class="font-weight-bold mb-0">
-                                                    </p>'.reset($doc).'
-                                                </div> <br>';
-                                                //return $doc["count"];
-                                                }*/
-                                                @endphp
-
-                                                @endforeach
-
-
-                                                <span class="font-small-3">Bonbon macaroon jelly beans gummi bears jelly
-                                                    lollipop apple</span>
-                                            </div>
-                                            <small class="text-muted">25 mins ago</small>
+                                                    <p class="font-weight-bold mb-0">Les Plus vendus: {{$modell}}
+                                                        {{$brand->brand}}
+                                                    </p>
+                                                    <span class="font-small-3">Le {{$modell}} {{$brand->brand}} a été
+                                                        vendus plus du
+                                                        {{$brand->total}} fois cette
+                                                        année
+                                                    </span>
+                                                </div>
+                                                <small class="text-muted"> {{$counteur}}</small>
                                         </li>
+
+
+
+
+
+
+                                        @endforeach
+
+
+
                                         <li>
                                             <div class="timeline-icon bg-warning">
                                                 <i class="feather icon-alert-circle font-medium-2 align-middle"></i>
@@ -249,6 +262,7 @@
     <!-- END: Content-->
 
     @include('layouts.footer')
+
     @include('layouts.footer-scripts')
 </body>
 <!-- END: Body-->

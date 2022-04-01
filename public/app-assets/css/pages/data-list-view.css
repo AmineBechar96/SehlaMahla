@@ -325,6 +325,7 @@ table.data-thumb-view.dataTable tbody tr td {
   #data-list-view .table-responsive .dataTables_filter,
   #data-thumb-view .table-responsive .dataTables_length,
   #data-thumb-view .table-responsive .dataTables_filter {
+    float: right;
     text-align: right; } }
 
 @media (max-width: 576px) {

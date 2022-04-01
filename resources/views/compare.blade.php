@@ -39,50 +39,64 @@
                                             Bonbon sesame snaps lemon drops marshmallow ice cream carrot cake croissant
                                             wafer.
                                         </p>
-                                        <form>
+                                        <form method="post" action="{{ route('compare.store') }}">
+                                            @csrf
                                             <div class="row">
                                                 <div class="col-md-6">
+                                                    <label for=""
+                                                        style="color:#ffffff;font-weight:bold;margin-bottom:10px;">Vehicule
+                                                        1</label>
                                                     <fieldset class="form-group">
-                                                        <select class="form-control" id="basicSelect">
-                                                            <option>IT</option>
-                                                            <option>Blade Runner</option>
-                                                            <option>Thor Ragnarok</option>
+                                                        <select class="form-control" id="basicSelect" name="vehicule1">
+                                                            <option value="" disabled selected> Choisis une Marque
+                                                            </option>
+                                                            @foreach ($marques as $marque)
+                                                            <option value="{{ $marque->id_car_make }}">
+                                                                {{ $marque->name }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <fieldset class="form-group">
-                                                        <select class="form-control" id="basicSelect">
-                                                            <option>IT</option>
-                                                            <option>Blade Runner</option>
-                                                            <option>Thor Ragnarok</option>
+                                                        <label for="" class="text-left"
+                                                            style="color:#ffffff;font-weight:bold;margin-bottom:10px;">Vehicule
+                                                            2</label>
+                                                        <select class="form-control" id="basicSelect" name="vehicule2">
+                                                            <option value="" disabled selected> Choisis un Marque
+                                                            </option>
+                                                            @foreach ($marques as $marque)
+                                                            <option value="{{ $marque->id_car_make }}">
+                                                                {{ $marque->name }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </fieldset>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
+
                                                     <fieldset class="form-group">
-                                                        <select class="form-control" id="basicSelect">
-                                                            <option>IT</option>
-                                                            <option>Blade Runner</option>
-                                                            <option>Thor Ragnarok</option>
+                                                        <select class="form-control" id="basicSelect" name="model1">
+                                                            <option value="" disabled selected> Choisis un Modéle
+                                                            </option>
+
                                                         </select>
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <fieldset class="form-group">
-                                                        <select class="form-control" id="basicSelect">
-                                                            <option>IT</option>
-                                                            <option>Blade Runner</option>
-                                                            <option>Thor Ragnarok</option>
+                                                        <select class="form-control" id="basicSelect" name="model2">
+                                                            <option value="" disabled selected> Choisis un Modéle
+                                                            </option>
+
                                                         </select>
                                                     </fieldset>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button type="button"
+                                                    <button type="submit"
                                                         class="btn mb-1 btn-primary btn-block">Comparer le deux
                                                         véhicules</button></div>
                                             </div>
@@ -101,6 +115,53 @@
     <!-- END: Content-->
     @include('layouts.footer')
     @include('layouts.footer-scripts')
+    <script>
+        $(document).ready(function() {
+                    $('select[name="vehicule1"]').on('change', function() {
+                        var BrandId = $(this).val();
+                        if (BrandId) {
+                            $.ajax({
+                                url: "{{ URL::to('model_2') }}/" + BrandId,
+                                type: "GET",
+                                dataType: "json",
+                                success: function(data) {
+                                    $('select[name="model1"]').empty();
+                                    $.each(data, function(key, value) {
+                                        $('select[name="model1"]').append('<option value="' +
+                                            value + '">' + value + '</option>');
+                                    });
+                                },
+                            });
+                        } else {
+                            console.log('AJAX load did not work');
+                        }
+                    });
+                });
+    </script>
+    <script>
+        $(document).ready(function() {
+                        $('select[name="vehicule2"]').on('change', function() {
+                            var BrandId = $(this).val();
+                            if (BrandId) {
+                                $.ajax({
+                                    url: "{{ URL::to('model_2') }}/" + BrandId,
+                                    type: "GET",
+                                    dataType: "json",
+                                    success: function(data) {
+                                        $('select[name="model2"]').empty();
+                                        $.each(data, function(key, value) {
+                                            $('select[name="model2"]').append('<option value="' +
+                                                value + '">' + value + '</option>');
+                                        });
+                                    },
+                                });
+                            } else {
+                                console.log('AJAX load did not work');
+                            }
+                        });
+                    });
+    </script>
+
 </body>
 <!-- END: Body-->
 

@@ -57,6 +57,15 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
+            'modes' => [
+                //'ONLY_FULL_GROUP_BY', // Disable this to allow grouping by one column
+                'STRICT_TRANS_TABLES',
+                'NO_ZERO_IN_DATE',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_AUTO_CREATE_USER',
+                'NO_ENGINE_SUBSTITUTION'
+            ],
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
@@ -90,7 +99,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-        'mongodb' => [
+        /*'mongodb' => [
             'driver'   => 'mongodb',
             //'dsn'      => 'mongodb://deboub_halim:echooffhalim@cluster0-shard-00-00.8az4k.mongodb.net:27017,cluster0-shard-00-01.8az4k.mongodb.net:27017,cluster0-shard-00-02.8az4k.mongodb.net:27017/laravel?ssl=true&replicaSet=atlas-akfoqe-shard-0&authSource=admin&retryWrites=true&w=majority',
             'dsn'      => 'mongodb://amine:testtest@cluster0-shard-00-00.qlxh6.mongodb.net:27017,cluster0-shard-00-01.qlxh6.mongodb.net:27017,cluster0-shard-00-02.qlxh6.mongodb.net:27017/test?ssl=true&replicaSet=atlas-sqr66l-shard-0&authSource=admin&retryWrites=true&w=majority',
@@ -102,7 +111,7 @@ return [
             //'username' => env('MONGO_DB_USERNAME'),
             //'password' => env('MONGO_DB_PASSWORD'),
             'options'  => []
-        ],
+        ],*/
     ],
 
     /*

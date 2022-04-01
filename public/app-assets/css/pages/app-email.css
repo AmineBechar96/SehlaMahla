@@ -47,7 +47,10 @@
       color: #626262; }
     .email-application .content-area-wrapper .sidebar .list-group .list-group-item.active {
       background: transparent;
-      color: #7367f0; }
+      color: #1CA7EC;
+      font-weight: bold;
+      
+    margin-left:3px; }
   .email-application .content-area-wrapper .content-right {
     width: calc(100% - 260px); }
     .email-application .content-area-wrapper .content-right .content-wrapper {

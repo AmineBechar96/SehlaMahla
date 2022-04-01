@@ -6,8 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Error 404 - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
@@ -41,7 +43,9 @@
 
 <!-- BEGIN: Body-->
 
-<body class="horizontal-layout horizontal-menu 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="hover" data-menu="horizontal-menu" data-col="1-column">
+<body
+    class="horizontal-layout horizontal-menu 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page"
+    data-open="hover" data-menu="horizontal-menu" data-col="1-column">
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -56,13 +60,13 @@
                         <div class="card auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
                             <div class="card-content">
                                 <div class="card-body text-center">
-                                    <img src="../../../app-assets/images/pages/404.png" class="img-fluid align-self-center" alt="branding logo">
+                                    <img src="../../../app-assets/images/pages/404.png"
+                                        class="img-fluid align-self-center" alt="branding logo">
                                     <h1 class="font-large-2 my-1">404 - Page Not Found!</h1>
                                     <p class="p-2">
-                                        paraphonic unassessable foramination Caulopteris worral Spirophyton encrimson esparcet aggerate chondrule
-                                        restate whistler shallopy biosystematy area bertram plotting unstarting quarterstaff.
+
                                     </p>
-                                    <a class="btn btn-primary btn-lg mt-2" href="index.html">Back to Home</a>
+                                    <a class="btn btn-primary btn-lg mt-2" href="{{url('home')}}">Accueil</a>
                                 </div>
                             </div>
                         </div>

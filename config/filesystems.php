@@ -51,8 +51,20 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-
+        'services/service-image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/services/service-image'),
+            'url' => env('APP_URL').'/storage/services/service-image',
+            'visibility' => 'public',
+        ],
+        'services/service-products' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/services/service-products'),
+            'url' => env('APP_URL').'/storage/services/service-products',
+            'visibility' => 'public',
+        ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -67,6 +79,9 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/services/service-image') => storage_path('app/public/services/service-image'),
+        public_path('storage/services/service-products') => storage_path('app/public/services/service-products'),
+
     ],
 
 ];

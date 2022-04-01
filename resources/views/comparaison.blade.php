@@ -18,8 +18,421 @@
     data-menu="horizontal-menu" data-col="2-columns">
     @include('layouts.header')
     @include('layouts.horizontal-menu')
+
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-body">
+                <!-- account setting page start -->
+                <section id="page-account-settings">
+                    <div class="row">
+                        <!-- left menu section -->
+                        <div class="col-md-3 mb-2 mb-md-0">
+                            <ul class="nav nav-pills flex-column mt-md-0 mt-1">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75 active" id="account-pill-general" data-toggle="pill"
+                                        href="#account-vertical-general" aria-expanded="true">
+                                        <i class="feather icon-globe mr-50 font-medium-3"></i>
+                                        General
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75" id="account-pill-password" data-toggle="pill"
+                                        href="#account-vertical-password" aria-expanded="false">
+                                        <i class="feather icon-lock mr-50 font-medium-3"></i>
+                                        Change Password
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75" id="account-pill-info" data-toggle="pill"
+                                        href="#account-vertical-info" aria-expanded="false">
+                                        <i class="feather icon-info mr-50 font-medium-3"></i>
+                                        Info
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75" id="account-pill-social" data-toggle="pill"
+                                        href="#account-vertical-social" aria-expanded="false">
+                                        <i class="feather icon-camera mr-50 font-medium-3"></i>
+                                        Social links
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75" id="account-pill-connections" data-toggle="pill"
+                                        href="#account-vertical-connections" aria-expanded="false">
+                                        <i class="feather icon-feather mr-50 font-medium-3"></i>
+                                        Connections
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex py-75" id="account-pill-notifications" data-toggle="pill"
+                                        href="#account-vertical-notifications" aria-expanded="false">
+                                        <i class="feather icon-message-circle mr-50 font-medium-3"></i>
+                                        Notifications
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- right content section -->
+                        <div class="col-md-9">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="account-vertical-general"
+                                                aria-labelledby="account-pill-general" aria-expanded="true">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead style="background:blue;">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade " id="account-vertical-password" role="tabpanel"
+                                                aria-labelledby="account-pill-password" aria-expanded="false">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead class="thead-dark">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="account-vertical-info" role="tabpanel"
+                                                aria-labelledby="account-pill-info" aria-expanded="false">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead class="thead-dark">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade " id="account-vertical-social" role="tabpanel"
+                                                aria-labelledby="account-pill-social" aria-expanded="false">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead class="thead-dark">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="account-vertical-connections" role="tabpanel"
+                                                aria-labelledby="account-pill-connections" aria-expanded="false">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead class="thead-dark">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="account-vertical-notifications"
+                                                role="tabpanel" aria-labelledby="account-pill-notifications"
+                                                aria-expanded="false">
+                                                <div class="row" id="table-head">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Table head options</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p>Similar to tables and dark tables, use the
+                                                                        modifier classes <code
+                                                                            class="highlighter-rouge">.thead-light</code>
+                                                                        or <code
+                                                                            class="highlighter-rouge">.thead-dark</code>
+                                                                        to make <code
+                                                                            class="highlighter-rouge">&lt;thead&gt;</code>s
+                                                                        appear light or dark gray.</p>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead class="thead-dark">
+                                                                            <tr>
+                                                                                <th scope="col">ID</th>
+                                                                                <th scope="col">Name</th>
+                                                                                <th scope="col">Email</th>
+                                                                                <th scope="col">User ID</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>Leanne Graham</td>
+                                                                                <td>sincere@april.biz</td>
+                                                                                <td>@mdo</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td>Ervin Howell</td>
+                                                                                <td>shanna@melissa.tv</td>
+                                                                                <td>@fat</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th scope="row">3</th>
+                                                                                <td>Clementine Bauch</td>
+                                                                                <td>nathan@yesenia.net</td>
+                                                                                <td>@twitter</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- account setting page end -->
+
+            </div>
+        </div>
+    </div>
     <!-- BEGIN: Content-->
     <div class="app-content content">
+
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">

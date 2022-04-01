@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        Darryldecode\Cart\CartServiceProvider::class,
+        //Barryvdh\DomPDF\ServiceProvider::class,
+        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
 
     ],
 
@@ -228,6 +233,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        //'PDF' => Barryvdh\DomPDF\Facade::class,
+       'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class,
+    'Share' => Jorenvh\Share\ShareFacade::class,
+
 
     ],
 

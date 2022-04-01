@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Selled;
+use App\Models\Car;
+use App\Models\car_model;
+use App\Models\voiture;
 class EstimationController extends Controller
 {
     /**
@@ -13,14 +16,33 @@ class EstimationController extends Controller
      */
     public function index()
     {
-        $model = \Session::get('brand');
+       $modell = \Session::get('car')['brand'];
+        $prix = \Session::get('car')['response'];
+        /*$models=voiture::select('ch', \DB::raw('count(*) as total'))->where('brand','Clio')
+        ->groupBy('ch')
+        ->orderBy('total','desc')
+        ->get();
+        return $models;*/
         //$selledcars=Selled::all();
         //$models= Selled::select('brand',)->where('model',$model)->paginate(3);
-       // $brandss=Selled::select('brand')->where('model',$model)
-               //  ->groupBy('brand')
-               //  ->get();
+      /* $brandss=Car::select('brand')->where('model',$model)
+               ->groupBy('brand')
+               ->get();*/
+
+               $brandss = Car::select('brand', \DB::raw('count(*) as total'))->where('model',$modell)
+                 ->groupBy('brand')
+                 ->get();
+                 $models = Car::select('model', \DB::raw('count(*) as total'))
+                 ->groupBy('model')
+                 ->orderBy('total','desc')
+                 ->get();
                 // return $brandss;
- $result = \DB::collection('Sell')->raw(function($collection) use ($model)
+                 $total=Car::all();
+                 $counttotal=count($total);
+                 $all_models=car_model::all();
+
+               // $models= Car::select('brand')->where('model',$model)->paginate(3);       
+ /*$result = \DB::collection('Sell')->raw(function($collection) use ($model)
 {
     return $collection->aggregate(array(
         array(
@@ -41,10 +63,10 @@ class EstimationController extends Controller
         ,array ('$limit' => 5)
         /*array(
             '$sortByCount'=>'$brand' 
-        )  */
+        )  
     ));
-});
-foreach($result as $document) {
+});*/
+/*foreach($result as $document) {
    $json= json_encode( $document->getArrayCopy() );
     //print($json);
     $properties = json_decode($json, true);
@@ -55,8 +77,10 @@ foreach ($properties as $doc) {
   //return $doc["count"];
 }
 return view('estimation', compact('result'));
-}
-//return view('estimation', compact('properties'));
+}*/
+return view('estimation', compact('brandss','modell','models','counttotal','prix'));
+//return view('estimation', compact('prix'));
+
     }
 
     /**

@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/weather',function(){
+    $apiKey=config('services.openweather.key');
+    $lng=request('lng');
+    $lat=request('lat');
+    $response=Http::get("https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lng&appid=$apiKey");
+    return $response->json();
+});

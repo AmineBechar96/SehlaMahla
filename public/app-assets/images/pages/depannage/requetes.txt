@@ -1,0 +1,54 @@
+*************stat.php*********************************
+select case when ch between 0 and 60 then '0-60' when ch between 61 and 90 then '61-90' when ch between 91 and 120 then '91-120' when ch between 121 and 150 then '121-150' when ch between 151 and 180 then '151-180' when ch between 181 and 210 then '181-210' else 'OTHERS' end as `Range`, count(1) as `Count` FROM `voitures` group by `Range` ORDER BY `Count` DESC
+
+SELECT couleur,COUNT(couleur) FROM `voitures` GROUP BY couleur ORDER BY `COUNT(couleur)` DESC
+
+SELECT energie,COUNT(energie)*100/ (SELECT COUNT(*) FROM voitures) as count FROM `voitures` GROUP BY energie ORDER BY `count` DESC
+
+SELECT type,count(type) *100/ (SELECT COUNT(*) FROM voitures) AS `az` FROM `voitures` GROUP BY type HAVING `az` > 2 ORDER BY `az` DESC;
+
+SELECT litre,count(litre) *100/ (SELECT COUNT(*) FROM voitures) AS `az` FROM `voitures` GROUP BY litre HAVING `az` > 2 ORDER BY `az` DESC
+
+SELECT tdi,count(tdi) *100/ (SELECT COUNT(*) FROM voitures) AS `az` FROM `voitures` GROUP BY tdi HAVING `az` > 2 ORDER BY `az` DESC
+
+SELECT proDate ,count(proDate) *100/ (SELECT COUNT(*) FROM voitures) AS `az` FROM `voitures` GROUP BY proDate ORDER BY `voitures`.`proDate` ASC
+
+
+
+
+
+*************stat2.php****************
+SELECT model ,count(model),AVG(price) FROM `voitures` GROUP BY model ORDER BY `count(model)  FROM voitures)` DESC
+
+SELECT model ,AVG(price) FROM `voitures` GROUP BY model ORDER BY `AVG(price)` DESC
+
+
+SELECT concat(brand,' ',notes),count(brand),AVG(price) FROM `voitures` GROUP BY brand,notes ORDER BY `count(brand)` DESC
+
+------------------------------------------------------------------------------------------------------------------------
+SELECT concat(brand,' ',notes),count(brand)*100/ (SELECT COUNT(*) FROM voitures) as per,AVG(price) FROM `voitures` GROUP BY brand,notes ORDER BY `per` DESC;
+SELECT concat(brand,' ',notes) ,AVG(price) FROM `voitures` GROUP BY brand,notes ORDER BY `AVG(price)` DESC;
+------------------------------------------------------------------------------------------------------------------
+
+----------------------------
+ table makhdoma bel php
+----------------------------
+
+SELECT location_wilaya , COUNT(location_wilaya) FROM `voitures` GROUP BY location_wilaya ORDER BY `COUNT(location_wilaya)` DESC
+
+
+****************stat3.php*************************
+
+SELECT adDate , AVG(price) FROM `voitures` GROUP BY adDate ORDER BY `voitures`.`adDate` ASC
+
+
+
+
+SELECT adDate , AVG(price) FROM `voitures` GROUP BY MONTH(adDate);
+SELECT adDate , SUM(price) as total ,COUNT(*) as sales FROM `voitures` GROUP BY adDate
+SELECT adDate , SUM(price) as total ,COUNT(*) as sales FROM `voitures` GROUP BY MONTH(adDate)
+SELECT count(*) as total, location_wilaya FROM `voitures3` WHERE model="Renault" and location_wilaya IN ('Alger','Oran','Blida','Boumerdes','Setif','Constantine','Mostaganem', 'Tlemcen','Mila','Tiaret','Batna','Tipaza','Chlef') GROUP BY location_wilaya ORDER BY total DESC LIMIT 18
+
+SELECT * , (6371 * 2 * ASIN(SQRT( POWER(SIN(( 36.19024415777295 - latitude) * pi()/180 / 2), 2) +COS( 36.19024415777295 * pi()/180) * COS(latitude * pi()/180) * POWER(SIN(( 3.75260752842387 - longitude) * pi()/180 / 2), 2) ))) as distance from carrentagency order by distance
+
+select case when rating between 4.0 and 5.0 then 'best' when rating between 3.0 and 4.0 then 'good' when rating between 2.0 and 3.0 then 'medium' when rating between 1.0 and 2.0 then 'bad' when rating between 0 and 1 then 'verybad' else 'OTHERS' end as `RATE`, count(1) as `Count` FROM `agence_location` where rating is not null group by `RATE` ORDER BY `Count` DESC
